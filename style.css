@@ -61,10 +61,13 @@ h2 {
 }
 
 .subtext-dark {
-  font-size: 1rem;
-  letter-spacing: -0.01em;
-  line-height: 1.6;
-  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.70);
   max-width: 500px;
   margin: 0 auto 3rem auto;
 }
@@ -312,15 +315,74 @@ h2 {
    Bottom CTA
    ================== */
 .bottom-cta {
-  padding: 10rem 2rem 12rem 2rem;
+  padding: 10rem 2rem 22rem 2rem;
   text-align: center;
   position: relative;
-  background: linear-gradient(to bottom, var(--bg-color) 0%, #a4bcbf 100%);
+  background: linear-gradient(to bottom, var(--bg-color) 0%, var(--bg-color) 80%, #95B3BD 100%);
   overflow: hidden;
 }
 
 .bottom-cta h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.bottom-cta h2::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, var(--bg-color) 0%, rgba(0, 0, 0, 0.25) 100%);
+  margin: 3rem auto 0 auto;
+}
+
+.bottom-cta .btn-glass {
+  color: #111;
+}
+
+.bottom-cta .btn-glass:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* ==================
+   Footer
+   ================== */
+.site-footer {
+  background-color: #95B3BD;
+  padding: 3rem 2rem 2.5rem 2rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(241, 241, 241, 0.80);
+  font-size: 14px;
+  font-family: 'Geist', sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+  word-wrap: break-word;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer-copy {
+  color: rgba(241, 241, 241, 0.80);
+  font-size: 14px;
+  font-family: 'Geist', sans-serif;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.3px;
 }
 
 /* ==================
