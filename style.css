@@ -78,8 +78,8 @@ h2 strong {
   justify-content: center;
   height: 48px;
   padding: 0 4rem;
-  font-size: 0.85rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 300;
   letter-spacing: 0.02em;
   border-radius: 9px;
   text-decoration: none;
@@ -93,11 +93,14 @@ h2 strong {
   border: none;
   color: white;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
 }
 
 .btn-glass:hover {
   background-color: rgba(217, 217, 217, 0.3);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(0.9);
+
 }
 
 .btn-light {
@@ -168,7 +171,7 @@ h2 strong {
    Clients Section
    ================== */
 .clients {
-  padding: 4rem 2rem 8rem 2rem;
+  padding: 7rem 2rem 8rem 2rem;
   text-align: center;
   background-color: var(--bg-color);
   position: relative;
@@ -177,33 +180,60 @@ h2 strong {
 
 .clients-title {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: var(--text-secondary);
-  margin-bottom: 4rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 0.70);
+  line-height: 17px;
+  letter-spacing: 0.36px;
   text-transform: uppercase;
+  word-wrap: break-word;
+  margin-bottom: 4rem;
 }
 
-.clients-logos {
+.clients-logos-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.clients-logos-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 45s linear infinite;
+}
+
+.clients-logos-set {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 5rem;
+  gap: 8rem;
+  padding-right: 8rem;
   opacity: 0.8;
 }
 
-.clients-logos img {
-  height: 28px;
+.clients-logos-set img {
+  width: 150px;
+  height: 48px;
   object-fit: contain;
-  opacity: 0.4;
-  filter: grayscale(100%) contrast(120%);
-  transition: all 0.4s ease;
+  opacity: 0.8;
 }
 
-.clients-logos img:hover {
-  opacity: 1;
-  filter: grayscale(0%) contrast(100%);
+.clients-logos-set img:nth-child(1),
+.clients-logos-set img:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.clients-logos-set img:nth-child(2) {
+  transform: scale(1.2);
+}
+
+.clients-logos-set img:last-child {
+  transform: scale(1.7) translateY(4px);
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ==================
