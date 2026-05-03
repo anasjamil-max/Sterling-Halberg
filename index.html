@@ -82,6 +82,32 @@
     <span>Studio ninedeez © 2026</span>
   </footer>
   </main>
+  <div class="custom-cursor"></div>
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    const speed = 0.15;
 
+    function initCursor() {
+      if (window.innerWidth > 480) {
+        window.addEventListener('mousemove', e => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          currentX += (mouseX - currentX) * speed;
+          currentY += (mouseY - currentY) * speed;
+          cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+          requestAnimationFrame(animate);
+        }
+        animate();
+      }
+    }
+
+    initCursor();
+    window.addEventListener('resize', initCursor);
+  </script>
 </body>
 </html>
