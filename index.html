@@ -83,7 +83,24 @@
   </footer>
   </main>
   <div class="custom-cursor"></div>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      wheelMultiplier: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Custom Cursor Logic
     const cursor = document.querySelector('.custom-cursor');
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
@@ -96,13 +113,13 @@
           mouseY = e.clientY;
         });
 
-        function animate() {
+        function animateCursor() {
           currentX += (mouseX - currentX) * speed;
           currentY += (mouseY - currentY) * speed;
           cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-          requestAnimationFrame(animate);
+          requestAnimationFrame(animateCursor);
         }
-        animate();
+        animateCursor();
       }
     }
 
