@@ -134,12 +134,11 @@ h2 {
 .subtext {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   line-height: 22px;
-  color: rgba(51, 51, 51, 0.75);
+  color: rgba(115, 115, 115, 0.85);
   max-width: 600px;
   margin: 0 auto 6rem auto;
-  opacity: 70%;
 }
 
 .subtext-dark {
@@ -174,23 +173,26 @@ h2 {
 }
 
 .btn-glass {
-  background-color: rgba(17, 17, 17, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: #111;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   transform: scale(0.9);
 }
 
 .btn-glass:hover {
-  background-color: rgba(17, 17, 17, 0.1);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transform: scale(0.9);
 }
 
 .btn-light {
   background: rgba(255, 255, 255, 0.8);
   color: #111;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -198,6 +200,7 @@ h2 {
 
 .btn-light:hover {
   background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -449,19 +452,19 @@ textarea {
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 12px 20px;
+  padding: 20px 20px 52px 20px;
 
-  /* Continue the CTA gradient background */
-  background-color: #95B3BD;
+  /* Transparent background to match the site's gradient */
+  background-color: transparent;
 
   /* Inter font stack */
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 12px;
   font-weight: 400;
 
-  /* Tight negative kerning for high-end aesthetic */
+  /* Subtle dark color for legibility on light background */
   letter-spacing: -0.72px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(51, 51, 51, 0.5);
 
   position: relative;
 }
@@ -475,7 +478,7 @@ textarea {
 
 .sn-global-footer a:hover {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(51, 51, 51, 0.9);
 }
 
 .sn-global-footer a:visited {
@@ -577,7 +580,45 @@ textarea {
   .sn-global-footer {
     flex-direction: column;
     gap: 8px;
-    padding: 16px 12px;
+    padding: 16px 12px 38px 12px;
     font-size: 11px;
   }
+}
+
+/* ==================
+   Animations
+   ================== */
+.reveal-text {
+  opacity: 1;
+}
+
+.word-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  padding-right: 0.25em;
+  /* Space between words */
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(110%);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-text.in-view .word {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 }
