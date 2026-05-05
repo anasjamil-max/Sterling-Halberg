@@ -167,7 +167,7 @@ h2 {
   letter-spacing: 0.02em;
   border-radius: 9px;
   text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: var(--font-mono);
   text-transform: uppercase;
 }
@@ -596,16 +596,15 @@ textarea {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
-  padding-right: 0.25em;
-  /* Space between words */
+  padding-right: 0.25em; /* Space between words */
 }
 
 .word {
   display: inline-block;
   opacity: 0;
   transform: translateY(110%);
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 }
 
@@ -621,4 +620,89 @@ textarea {
     transition: none;
   }
 }
+/* ==================
+   Contact Page
+   ================== */
+.contact-hero {
+  padding: 12vh 2rem 6vh 2rem;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem 10rem 2rem;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-primary);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-container {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  
+  .submit-container {
+    grid-column: span 1;
+  }
 }

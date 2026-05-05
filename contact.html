@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Studio ninedeez</title>
+  <meta name="description" content="Get in touch with Studio ninedeez to discuss your next project.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page-wrapper">
+    <!-- Back to Home Link (Optional but good for UX) -->
+    <nav style="position: absolute; top: 2rem; left: 2rem; z-index: 10;">
+      <a href="index.html" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
+    </nav>
+
+    <section class="contact-hero">
+      <h1>Have an Idea?<br>Let's Talk.</h1>
+      <p class="subtext">Fill out the form below and we'll get back to you within 24 hours to discuss how we can bring your vision to life.</p>
+    </section>
+
+    <section class="contact-container">
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+        </div>
+        <div class="form-group full-width">
+          <label for="subject">What's on your mind?</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry, collaboration, etc." required>
+        </div>
+        <div class="form-group full-width">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us more about your project..." required></textarea>
+        </div>
+        <div class="submit-container">
+          <button type="submit" class="btn btn-glass">SEND MESSAGE</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="sn-global-footer">
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <span>Studio ninedeez © 2026</span>
+    </footer>
+  </main>
+
+  <div class="custom-cursor"></div>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      wheelMultiplier: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Custom Cursor Logic
+    const cursor = document.querySelector('.custom-cursor');
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    const speed = 0.15;
+
+    function initCursor() {
+      if (window.innerWidth > 480) {
+        window.addEventListener('mousemove', e => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+          currentX += (mouseX - currentX) * speed;
+          currentY += (mouseY - currentY) * speed;
+          cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+          requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+      }
+    }
+
+    initCursor();
+    window.addEventListener('resize', initCursor);
+
+    // Form submission animation (optional)
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'MESSAGE SENT';
+      btn.style.background = 'rgba(255, 255, 255, 0.6)';
+      e.target.reset();
+      setTimeout(() => {
+        btn.textContent = 'SEND MESSAGE';
+        btn.style.background = '';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
