@@ -814,6 +814,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .modal-info h3 {
@@ -839,6 +840,61 @@ textarea {
   height: 44px;
   font-size: 13px;
   cursor: auto !important; /* Allow normal click behavior */
+}
+
+/* Modal Carousel Styles */
+.carousel-controls {
+  position: absolute;
+  top: 1.5rem;
+  left: 3rem; /* Aligns with padding of .modal-info */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  width: 24px;
+  height: 24px;
+  transition: color 0.3s;
+  padding: 0;
+}
+
+.carousel-btn:hover {
+  color: #111;
+}
+
+.carousel-thumbnails {
+  display: flex;
+  gap: 6px;
+}
+
+.carousel-thumb {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer !important;
+  border: 1px solid transparent;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.carousel-thumb:hover {
+  opacity: 0.8;
+}
+
+.carousel-thumb.active {
+  opacity: 1;
+  border-color: #111;
+  box-shadow: 0 0 0 1px #111;
 }
 
 @media (max-width: 768px) {
