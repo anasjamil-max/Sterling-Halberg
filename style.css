@@ -518,6 +518,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .desktop-br {
+    display: none;
+  }
+
   h1 {
     font-size: 3rem;
     line-height: 44px;
@@ -547,9 +551,43 @@ textarea {
     aspect-ratio: 1/1;
   }
 
+  .hero {
+    min-height: auto;
+    padding-bottom: 6rem;
+  }
+
+  .clients {
+    padding-top: 4rem;
+  }
+
+  .clients-logos-track {
+    animation-duration: 25s;
+  }
+
   .clients-logos-set {
-    gap: 3rem;
-    padding-right: 3rem;
+    gap: 5rem;
+    padding-right: 5rem;
+  }
+
+  .clients-logos-set img {
+    width: 150px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .clients-logos-set img:nth-child(1),
+  .clients-logos-set img:nth-child(3) {
+    transform: translateY(6px);
+  }
+
+  .clients-logos-set img:nth-child(2) {
+    transform: scale(1.2);
+    margin: 0 1.2rem;
+  }
+
+  .clients-logos-set img:last-child {
+    transform: scale(1.7) translateY(4px);
+    margin: 0 3rem;
   }
 
   .sn-global-footer {
@@ -568,15 +606,35 @@ textarea {
     margin-top: 10vh;
   }
 
+  .clients-logos-track {
+    animation-duration: 15s;
+  }
+
   .clients-logos-set {
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: 4.5rem;
+    padding-right: 4.5rem;
   }
 
   .clients-logos-set img {
-    height: 24px;
-    width: auto;
-    max-width: 120px;
+    width: 140px;
+    height: 45px;
+    max-width: none;
+    object-fit: contain;
+  }
+
+  .clients-logos-set img:nth-child(1),
+  .clients-logos-set img:nth-child(3) {
+    transform: translateY(6px);
+  }
+
+  .clients-logos-set img:nth-child(2) {
+    transform: scale(1.2);
+    margin: 0 1rem;
+  }
+
+  .clients-logos-set img:last-child {
+    transform: scale(1.7) translateY(4px);
+    margin: 0 2.5rem;
   }
 
   .sn-global-footer {
