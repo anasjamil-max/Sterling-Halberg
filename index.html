@@ -58,31 +58,27 @@
 
       <div class="portfolio-grid">
         <div class="col-left">
-          <img src="images/portfolio-web-24-1.jpg.jpeg" alt="UI Dashboard" class="port-img left-img"
-            data-title="UI Dashboard"
-            data-description="A sleek, modern user interface dashboard design focusing on clarity and ease of use."
-            data-link="#"
-            data-gallery="images/portfolio-web-24-1.jpg.jpeg,images/mk-p-1.jpg,images/mk-p-2.jpg,images/mk-p-3.png,images/mk-p-4.jpg">
+          <a href="mk-project.html" style="display: contents;">
+            <img src="images/portfolio-web-24-1.jpg.jpeg" alt="MacKenzie Project" class="port-img left-img">
+          </a>
         </div>
         <div class="col-center">
-          <img src="images/portfolio-scrubposts-40.jpg.jpeg" alt="Crumpled Package" class="port-img center-main-img"
-            data-title="Scrub Packaging"
-            data-description="Creative and sustainable packaging design for the Scrub brand, emphasizing a tactile experience."
-            data-link="#">
+          <a href="#" style="display: contents;">
+            <img src="images/portfolio-scrubposts-40.jpg.jpeg" alt="Scrub Packaging" class="port-img center-main-img">
+          </a>
           <div class="center-bottom-row">
-            <img src="images/portfolio--bv-p-env-08.jpg.jpeg" alt="Envelope with flower" class="port-img bottom-img"
-              data-title="Bluevirtual Identity"
-              data-description="Elegant envelope and brand identity design for Bluevirtual, blending minimalism with nature."
-              data-link="#">
-            <img src="images/portfolio-blue.png" alt="Billboard in sky" class="port-img bottom-img"
-              data-title="Cloud Campaign"
-              data-description="A striking billboard advertising campaign reaching new heights." data-link="#">
+            <a href="#" style="display: contents;">
+              <img src="images/portfolio--bv-p-env-08.jpg.jpeg" alt="Bluevirtual Identity" class="port-img bottom-img">
+            </a>
+            <a href="#" style="display: contents;">
+              <img src="images/portfolio-blue.png" alt="Cloud Campaign" class="port-img bottom-img">
+            </a>
           </div>
         </div>
         <div class="col-right">
-          <img src="images/portfolio-PetFindr-dark-on-purple-300ppi.png" alt="PetFindr Card" class="port-img right-img"
-            data-title="PetFindr App"
-            data-description="A vibrant and engaging UI card design for the PetFindr mobile application." data-link="#">
+          <a href="#" style="display: contents;">
+            <img src="images/portfolio-PetFindr-dark-on-purple-300ppi.png" alt="PetFindr App" class="port-img right-img">
+          </a>
         </div>
       </div>
     </section>
@@ -103,47 +99,7 @@
       <span>Studio ninedeez © 2026</span>
     </footer>
 
-    <!-- Portfolio Modal -->
-    <div class="portfolio-modal" id="portfolioModal">
-      <div class="modal-backdrop"></div>
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-        <div class="modal-body">
-          <div class="modal-image-container">
-            <img src="" alt="Project Image" id="modalImage">
-          </div>
-          <div class="modal-info">
-            <div class="carousel-controls" id="carouselControls" style="display: none;">
-              <button class="carousel-btn" id="carouselPrev" aria-label="Previous image">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <div class="carousel-thumbnails" id="carouselThumbnails"></div>
-              <button class="carousel-btn" id="carouselNext" aria-label="Next image">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-            </div>
-            <h3 id="modalTitle">Project Title</h3>
-            <p id="modalDescription">Project description goes here.</p>
-            <a href="#" class="btn btn-light" id="modalLink" target="_blank">Visit site <svg width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" style="margin-left: 8px;">
-                <line x1="7" y1="17" x2="17" y2="7"></line>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Portfolio Modal Removed -->
 
   </main>
   <div class="custom-cursor"></div>
@@ -190,103 +146,7 @@
     initCursor();
     window.addEventListener('resize', initCursor);
 
-    // Portfolio Modal Logic
-    const modal = document.getElementById('portfolioModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalLink = document.getElementById('modalLink');
-    const closeBtn = document.querySelector('.modal-close');
-    const backdrop = document.querySelector('.modal-backdrop');
-    const portImages = document.querySelectorAll('.port-img');
-
-    // Carousel Elements
-    const carouselControls = document.getElementById('carouselControls');
-    const carouselThumbnails = document.getElementById('carouselThumbnails');
-    const carouselPrev = document.getElementById('carouselPrev');
-    const carouselNext = document.getElementById('carouselNext');
-
-    let currentGallery = [];
-    let currentGalleryIndex = 0;
-
-    function renderCarousel() {
-      modalImage.src = currentGallery[currentGalleryIndex];
-      carouselThumbnails.innerHTML = '';
-      currentGallery.forEach((src, idx) => {
-        const thumb = document.createElement('img');
-        thumb.src = src;
-        thumb.className = 'carousel-thumb' + (idx === currentGalleryIndex ? ' active' : '');
-        thumb.addEventListener('click', (e) => {
-          e.stopPropagation();
-          currentGalleryIndex = idx;
-          renderCarousel();
-        });
-        carouselThumbnails.appendChild(thumb);
-      });
-    }
-
-    if (carouselPrev && carouselNext) {
-      carouselPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentGallery.length > 0) {
-          currentGalleryIndex = (currentGalleryIndex - 1 + currentGallery.length) % currentGallery.length;
-          renderCarousel();
-        }
-      });
-
-      carouselNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentGallery.length > 0) {
-          currentGalleryIndex = (currentGalleryIndex + 1) % currentGallery.length;
-          renderCarousel();
-        }
-      });
-    }
-
-    function openModal(e) {
-      const img = e.currentTarget;
-
-      const galleryAttr = img.getAttribute('data-gallery');
-      if (galleryAttr) {
-        currentGallery = galleryAttr.split(',');
-        currentGalleryIndex = 0;
-        carouselControls.style.display = 'flex';
-        renderCarousel();
-      } else {
-        modalImage.src = img.src;
-        carouselControls.style.display = 'none';
-        currentGallery = [];
-      }
-
-      modalTitle.textContent = img.getAttribute('data-title') || 'Project Title';
-      modalDescription.textContent = img.getAttribute('data-description') || 'Project description';
-
-      const link = img.getAttribute('data-link') || '#';
-      modalLink.href = link;
-
-      modal.classList.add('active');
-      lenis.stop(); // Stop scrolling when modal is open
-    }
-
-    function closeModal() {
-      modal.classList.remove('active');
-      lenis.start(); // Resume scrolling
-    }
-
-    portImages.forEach(img => {
-      img.addEventListener('click', openModal);
-      img.style.cursor = 'pointer'; // Ensure visual cue
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
+    // Portfolio Modal Removed
   </script>
 </body>
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selling property in Australia? - MacKenzie</title>
+  <meta name="description"
+    content="We teamed up with real estate entrepreneur Aaron Downie to elevate his property venture, MacKenzie.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-hero {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 15vh;
+      padding-bottom: 5vh;
+    }
+
+    .project-content {
+      text-align: center;
+      color: var(--text-primary);
+      padding: 0 2rem;
+      max-width: 900px;
+    }
+
+    .project-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem 10rem 2rem;
+      column-count: 3;
+      column-gap: 30px;
+    }
+
+    .project-gallery-img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+      margin-bottom: 30px;
+      display: block;
+      break-inside: avoid;
+    }
+
+    @media (max-width: 1024px) {
+      .project-gallery {
+        column-count: 2;
+      }
+    }
+
+    .project-gallery-img:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (max-width: 768px) {
+      .project-content h1 {
+        font-size: 3rem;
+      }
+      .project-gallery {
+        column-count: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page-wrapper">
+    <section class="project-hero">
+      <div class="project-content">
+        <h1>Selling property<br>in Australia?</h1>
+        <p class="subtext">Blink, and the market’s moved. Buyers are quicker, competition is fiercer, and if your brand
+          isn’t cutting through the noise, well... good luck.</p>
+        <p class="subtext">We teamed up with real estate entrepreneur Aaron Downie to elevate his property venture,
+          MacKenzie, a brand refresh, refined tone of voice, typography, and social presence. Real estate in NSW is a
+          wild ride, fast-moving, unpredictable, and not exactly forgiving. Buyers are scrolling, swiping, and deciding
+          before they even step into a property. So, standing out? Non-negotiable. We made sure Mackenzie isn’t just
+          seen but remembered.</p>
+      </div>
+    </section>
+
+    <section class="project-gallery">
+      <img src="images/portfolio-web-24-1.jpg.jpeg" alt="MK Project 1" class="project-gallery-img">
+      <img src="images/mk-p-1.jpg" alt="MK Project 2" class="project-gallery-img">
+      <img src="images/mk-p-2.jpg" alt="MK Project 3" class="project-gallery-img">
+      <img src="images/mk-p-3.png" alt="MK Project 4" class="project-gallery-img">
+      <img src="images/mk-p-4.jpg" alt="MK Project 5" class="project-gallery-img">
+    </section>
+
+    <section class="bottom-cta">
+      <div class="cta-content">
+        <h2>Let's build what's <br> next.</h2>
+        <p class="subtext-dark">Click the button, fill out the form, and we’ll get back to you shortly with ideas on how
+          we can move things forward.</p>
+        <a href="contact.html" class="btn btn-glass">GET STARTED</a>
+      </div>
+    </section>
+
+    <footer class="sn-global-footer">
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Pinterest</a>
+      <span>Studio ninedeez © 2026</span>
+    </footer>
+  </main>
+
+  <div class="custom-cursor"></div>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      wheelMultiplier: 1.2,
+      smoothWheel: true,
+      smoothTouch: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // -> Custom Cursor Logic 
+    const cursor = document.querySelector('.custom-cursor');
+    let mouseX = 0, mouseY = 0;
+    let currentX = 0, currentY = 0;
+    const speed = 0.15;
+
+    function initCursor() {
+      if (window.innerWidth > 480) {
+        window.addEventListener('mousemove', e => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+          currentX += (mouseX - currentX) * speed;
+          currentY += (mouseY - currentY) * speed;
+          cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+          requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+      }
+    }
+
+    initCursor();
+    window.addEventListener('resize', initCursor);
+  </script>
+</body>
+
+</html>
