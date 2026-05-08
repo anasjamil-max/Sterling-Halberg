@@ -606,6 +606,11 @@ textarea {
     margin: 0 3rem;
   }
 
+  .bottom-cta {
+    padding-bottom: 14rem;
+    padding-top: 8rem;
+  }
+
   .sn-global-footer {
     gap: 20px;
     padding: 12px 16px;
@@ -653,11 +658,22 @@ textarea {
     margin: 0 2.5rem;
   }
 
+  .bottom-cta {
+    padding-bottom: 9rem;
+    padding-top: 6rem;
+  }
+
   .sn-global-footer {
-    flex-direction: column;
-    gap: 8px;
-    padding: 16px 12px 38px 12px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px 12px 60px 12px;
     font-size: 11px;
+  }
+
+  .sn-global-footer span {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 4px;
   }
 }
 
