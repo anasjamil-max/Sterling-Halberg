@@ -536,24 +536,36 @@ textarea {
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
   }
 
   .col-left,
-  .col-right {
+  .col-center,
+  .col-right,
+  .center-bottom-row {
+    display: contents;
     margin-top: 0;
-    align-items: center;
   }
 
   .left-img,
   .right-img,
-  .center-main-img {
+  .center-main-img,
+  .bottom-img {
     width: 100%;
-    max-width: 400px;
+    max-width: none;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
+
+  .left-img { grid-column: span 2; }
+  .center-main-img { grid-column: span 1; align-self: end; }
+  .center-bottom-row a:nth-child(1) .bottom-img { grid-column: span 1; align-self: end; }
+  .center-bottom-row a:nth-child(2) .bottom-img { grid-column: span 2; }
+  .right-img { grid-column: span 2; }
 
   .hero {
     min-height: auto;
