@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selling property in Australia? - MacKenzie</title>
-  <meta name="description"
-    content="We teamed up with real estate entrepreneur Aaron Downie to elevate his property venture, MacKenzie.">
+  <title>$25 Billion - Scrub</title>
+  <meta name="description" content="Scrub isn’t just a product, it’s a system, a routine, a vibe.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +36,7 @@
     }
 
     .project-content h1 {
-      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 40%);
+      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 80%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -48,8 +47,16 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 2rem 10rem 2rem;
-      column-count: 3;
-      column-gap: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex: 1;
     }
 
     .project-gallery-img {
@@ -60,14 +67,15 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform;
-      margin-bottom: 30px;
       display: block;
-      break-inside: avoid;
     }
 
     @media (max-width: 1024px) {
       .project-gallery {
-        column-count: 2;
+        flex-wrap: wrap;
+      }
+      .gallery-column {
+        min-width: calc(50% - 15px);
       }
     }
 
@@ -82,7 +90,10 @@
       }
 
       .project-gallery {
-        column-count: 1;
+        flex-direction: column;
+      }
+      .gallery-column {
+        min-width: 100%;
       }
     }
 
@@ -103,32 +114,38 @@
     </nav>
     <section class="project-hero">
       <div class="project-content">
-        <h1>Selling property<br>in Australia?</h1>
-        <p class="subtext">Blink, and the market’s moved. Buyers are quicker, competition is fiercer, and if your brand
-          isn’t cutting through the noise, well... good luck.</p>
-        <p class="subtext" style="margin-bottom: 6rem;">We teamed up with real estate entrepreneur Aaron Downie to
-          elevate his property venture,
-          MacKenzie, a brand refresh, refined tone of voice, typography, and social presence. Real estate in NSW is a
-          wild ride, fast-moving, unpredictable, and not exactly forgiving. Buyers are scrolling, swiping, and deciding
-          before they even step into a property. So, standing out? Non-negotiable. We made sure Mackenzie isn’t just
-          seen but remembered.</p>
+        <h1>$25 Billion</h1>
+        <p class="subtext">$25 Billion. That’s how much the global nail care market is projected to hit this year. Yet
+          most brands still treat nails like an afterthought. Scrub (founded by Madeline Silins) saw a different story:
+          people want simple, clean, and smart nail care, products that work and visuals that don’t talk down to them.
+        </p>
+        <p class="subtext" style="margin-bottom: 6rem;">We rebuilt the brand from scratch: a wordmark that stands alone,
+          unisex colors that pop but stay sophisticated, and packaging designed for clarity and impact. Fonts and
+          spacing crafted for consistency across digital, print, and social. Scrub isn’t just a product, it’s a system,
+          a routine, a vibe.</p>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-bottom: 5rem;">
-          <a href="https://au.linkedin.com/in/aaron-downie-buyers-agent" target="_blank" rel="noopener noreferrer"
-            class="btn btn-glass" style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT AARON DOWNIE ON LINKEDIN</a>
-          <div style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);"></div>
-          <a href="https://www.instagram.com/mackenziebuyersagency/" target="_blank" rel="noopener noreferrer"
-            class="btn btn-glass" style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT MACKENZIE BA</a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT SCRUB WEBSITE</a>
+          <div
+            style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);">
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT SCRUB INSTAGRAM</a>
         </div>
       </div>
     </section>
 
     <section class="project-gallery">
-      <img src="images/portfolio-web-24-1.jpg.jpeg" alt="MK Project 1" class="project-gallery-img">
-      <img src="images/mk-p-1.jpg" alt="MK Project 2" class="project-gallery-img">
-      <img src="images/mk-p-2.jpg" alt="MK Project 3" class="project-gallery-img">
-      <img src="images/mk-p-3.jpg" alt="MK Project 4" class="project-gallery-img">
-      <img src="images/mk-p-4.jpg" alt="MK Project 5" class="project-gallery-img">
-      <img src="images/mk-p-5.jpg" alt="MK Project 6" class="project-gallery-img">
+      <div class="gallery-column">
+        <img src="images/scrubposts-39.jpg" alt="Scrub Project 1" class="project-gallery-img">
+      </div>
+      <div class="gallery-column">
+        <img src="images/scrubposts-40.jpg" alt="Scrub Project 2" class="project-gallery-img">
+        <img src="images/scrubposts-42.jpg" alt="Scrub Project 4" class="project-gallery-img">
+      </div>
+      <div class="gallery-column">
+        <img src="images/scrubposts-41.jpg" alt="Scrub Project 3" class="project-gallery-img">
+      </div>
     </section>
 
 
