@@ -532,6 +532,7 @@ textarea {
 
   h2 {
     font-size: 2.5rem;
+    line-height: 36px;
   }
 
   .portfolio-grid {
@@ -559,8 +560,20 @@ textarea {
     padding-bottom: 6rem;
   }
 
+  .hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+  }
+
   .clients {
-    padding-top: 4rem;
+    padding-top: 6rem;
   }
 
   .clients-logos-track {
