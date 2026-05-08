@@ -520,6 +520,7 @@ textarea {
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem;
+    line-height: 44px;
   }
 
   h2 {
@@ -560,6 +561,7 @@ textarea {
 @media (max-width: 480px) {
   h1 {
     font-size: 2.5rem;
+    line-height: 36px;
   }
 
   .hero-content {
