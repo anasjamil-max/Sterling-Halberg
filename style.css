@@ -533,6 +533,10 @@ textarea {
   h2 {
     font-size: 2.5rem;
     line-height: 36px;
+    background: linear-gradient(to bottom, #f1f1f1 0%, #333333 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .portfolio-grid {
@@ -804,6 +808,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .contact-hero {
+    padding-top: 22vh;
+  }
+
   .contact-form {
     grid-template-columns: 1fr;
   }
