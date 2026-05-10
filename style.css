@@ -357,7 +357,16 @@ textarea {
 }
 
 .portfolio h2 {
-  margin-bottom: 10rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio h2::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+  margin: 3rem auto 0 auto;
 }
 
 .portfolio-grid {
