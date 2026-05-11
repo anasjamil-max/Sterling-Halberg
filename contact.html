@@ -11,21 +11,24 @@
   <meta property="og:description" content="Get in touch with Sterling Halberg to discuss your next project.">
   <meta property="og:url" content="https://sterling-halberg.co/contact" />
 
-  <!-- Fonts -->
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
+
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <main class="page-wrapper">
-    <!-- Back to Home Link (Optional but good for UX) -->
+
+
     <nav style="position: absolute; top: 2rem; left: 2rem; z-index: 10;">
       <a href="index.html" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
@@ -76,7 +79,8 @@
 
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // Initialize Lenis for smooth scrolling
+
+
     const lenis = new Lenis({
       duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -91,7 +95,8 @@
     }
     requestAnimationFrame(raf);
 
-    // Custom Cursor Logic
+
+
     const cursor = document.querySelector('.custom-cursor');
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
@@ -117,7 +122,8 @@
     initCursor();
     window.addEventListener('resize', initCursor);
 
-    // Form submission animation (optional)
+
+
     document.getElementById('contact-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = e.target.querySelector('button');

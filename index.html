@@ -11,14 +11,16 @@
   <meta property="og:description" content="We design branding, websites, apps, MVPs, and e-commerce systems for modern businesses worldwide.">
   <meta property="og:url" content="https://sterling-halberg.co/" />
 
-  <!-- Fonts -->
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
+
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -105,16 +107,18 @@
       <span>Sterling Halberg © 2026</span>
     </footer>
 
-    <!-- Portfolio Modal Removed -->
+
+
 
   </main>
   <div class="custom-cursor"></div>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // Initialize Lenis for smooth scrolling
+
+
     const lenis = new Lenis({
       duration: 1.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       wheelMultiplier: 1.2,
       smoothWheel: true,
       smoothTouch: false,
@@ -126,7 +130,7 @@
     }
     requestAnimationFrame(raf);
 
-    // -> Custom Cursor Logic 
+
     const cursor = document.querySelector('.custom-cursor');
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;
@@ -152,7 +156,7 @@
     initCursor();
     window.addEventListener('resize', initCursor);
 
-    // Portfolio Modal Removed
+
   </script>
 </body>
 

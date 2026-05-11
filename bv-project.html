@@ -12,14 +12,16 @@
   <meta property="og:description" content="A VA service built for founders who’d rather grow the business than spend their day drowning in admin.">
   <meta property="og:url" content="https://sterling-halberg.co/projects/bv-project" />
 
-  <!-- Fonts -->
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
+
+
   <link rel="stylesheet" href="style.css">
   <style>
     .project-hero {
@@ -96,7 +98,8 @@
 <body>
 
   <main class="page-wrapper">
-    <!-- Back to Home Link -->
+
+
     <nav style="position: absolute; top: 2rem; left: 2rem; z-index: 10;">
       <a href="index.html" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
@@ -145,10 +148,11 @@
   <div class="custom-cursor"></div>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // Initialize Lenis for smooth scrolling
+
+
     const lenis = new Lenis({
       duration: 1.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       wheelMultiplier: 1.2,
       smoothWheel: true,
       smoothTouch: false,
@@ -160,7 +164,7 @@
     }
     requestAnimationFrame(raf);
 
-    // -> Custom Cursor Logic 
+
     const cursor = document.querySelector('.custom-cursor');
     let mouseX = 0, mouseY = 0;
     let currentX = 0, currentY = 0;

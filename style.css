@@ -26,18 +26,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
-  overflow-x: hidden; /* Fix horizontal scroll */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+
+
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* Lenis Smooth Scroll Setup */
+
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -59,7 +61,8 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Stack (front → back): content → noise → gradient */
+
+
 body {
   position: relative;
   min-height: 100vh;
@@ -67,10 +70,10 @@ body {
   flex-direction: column;
   align-items: stretch;
   background: transparent;
-  /* Move background to fixed element */
 }
 
-/* Fixed Background Gradient */
+
+
 body::before {
   content: "";
   position: fixed;
@@ -82,7 +85,8 @@ body::before {
   pointer-events: none;
 }
 
-/* Fixed Noise Texture */
+
+
 body::after {
   content: "";
   position: fixed;
@@ -109,9 +113,8 @@ main,
   min-height: 100vh;
 }
 
-/* ==================
-   Typography
-   ================== */
+
+
 h1 {
   font-family: var(--font-heading);
   font-size: 60px;
@@ -162,9 +165,8 @@ h2 {
   margin: 0 auto 3rem auto;
 }
 
-/* ==================
-   Buttons
-   ================== */
+
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -213,9 +215,8 @@ h2 {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* ==================
-   Cursor System
-   ================== */
+
+
 html,
 body,
 a,
@@ -260,9 +261,8 @@ textarea {
   }
 }
 
-/* ==================
-   Hero Section
-   ================== */
+
+
 .hero {
   position: relative;
   width: 100%;
@@ -280,9 +280,8 @@ textarea {
   padding: 0 2rem;
 }
 
-/* ==================
-   Clients Section
-   ================== */
+
+
 .clients {
   padding: 7rem 2rem 8rem 2rem;
   text-align: center;
@@ -355,9 +354,8 @@ textarea {
   }
 }
 
-/* ==================
-   Portfolio Section
-   ================== */
+
+
 .portfolio {
   padding: 4rem 2rem 8rem 2rem;
   text-align: center;
@@ -366,6 +364,10 @@ textarea {
 
 .portfolio h2 {
   margin-bottom: 3rem;
+  background: linear-gradient(to bottom, #f1f1f1 0%, #333333 16%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .portfolio h2::after {
@@ -393,7 +395,6 @@ textarea {
   flex-direction: column;
   justify-content: center;
   margin-top: 70px;
-  /* Aligns visually with the center main image */
 }
 
 .col-center {
@@ -439,9 +440,8 @@ textarea {
   aspect-ratio: 1/1;
 }
 
-/* ==================
-   Bottom CTA
-   ================== */
+
+
 .bottom-cta {
   padding: 10rem 2rem 22rem 2rem;
   text-align: center;
@@ -463,9 +463,8 @@ textarea {
   margin: 3rem auto 0 auto;
 }
 
-/* ==================
-   Footer
-   ================== */
+
+
 .sn-global-footer {
   display: flex;
   justify-content: center;
@@ -474,22 +473,20 @@ textarea {
   gap: 30px;
   padding: 20px 20px 52px 20px;
 
-  /* Transparent background to match the site's gradient */
   background-color: transparent;
 
-  /* Inter font stack */
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 12px;
   font-weight: 400;
 
-  /* Subtle dark color for legibility on light background */
   letter-spacing: -0.72px;
   color: rgba(51, 51, 51, 0.5);
 
   position: relative;
 }
 
-/* --- Link Reset & Interaction --- */
+
+
 .sn-global-footer a {
   color: inherit;
   text-decoration: none;
@@ -512,9 +509,8 @@ textarea {
   }
 }
 
-/* ==================
-   Responsive
-   ================== */
+
+
 @media (max-width: 1024px) {
   h1 {
     font-size: 4rem;
@@ -710,9 +706,8 @@ textarea {
   }
 }
 
-/* ==================
-   Animations
-   ================== */
+
+
 .reveal-text {
   opacity: 1;
 }
@@ -721,7 +716,7 @@ textarea {
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
-  padding-right: 0.25em; /* Space between words */
+  padding-right: 0.25em;
 }
 
 .word {
@@ -745,9 +740,8 @@ textarea {
     transition: none;
   }
 }
-/* ==================
-   Contact Page
-   ================== */
+
+
 .contact-hero {
   padding: 12vh 2rem 6vh 2rem;
   text-align: center;
@@ -842,13 +836,13 @@ textarea {
   }
 }
 
-/* ==================
-   Portfolio Modal
-   ================== */
+
+
 .portfolio-modal {
   position: fixed;
   inset: 0;
-  z-index: 10000; /* Above custom cursor */
+  z-index: 10000;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -906,7 +900,6 @@ textarea {
   color: #111;
   z-index: 10;
   transition: background 0.3s ease;
-  /* Reset cursor to auto so pointer works */
   cursor: auto !important; 
 }
 
@@ -968,14 +961,17 @@ textarea {
   padding: 0 2rem;
   height: 44px;
   font-size: 13px;
-  cursor: auto !important; /* Allow normal click behavior */
+  cursor: auto !important;
+
 }
 
-/* Modal Carousel Styles */
+
+
 .carousel-controls {
   position: absolute;
   top: 1.5rem;
-  left: 3rem; /* Aligns with padding of .modal-info */
+  left: 3rem;
+
   display: flex;
   align-items: center;
   gap: 8px;
