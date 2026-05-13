@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>$25 Billion - Scrub</title>
-  <meta name="description" content="Scrub isn’t just a product, it’s a system, a routine, a vibe.">
-  <link rel="canonical" href="https://sterling-halberg.co/projects/scrub" />
-  <meta property="og:title" content="$25 Billion - Scrub">
-  <meta property="og:description" content="Scrub isn’t just a product, it’s a system, a routine, a vibe.">
-  <meta property="og:url" content="https://sterling-halberg.co/projects/scrub" />
+  <title>Losing a pet is every owner’s nightmare. - PetFindr</title>
+  <meta name="description"
+    content="PetFindr smart tags that do the talking. No apps, no passwords, just a straight line home.">
+  <link rel="canonical" href="https://sterling-halberg.co/petfindr" />
+  <meta property="og:title" content="Losing a pet is every owner’s nightmare. - PetFindr">
+  <meta property="og:description" content="PetFindr smart tags that do the talking. No apps, no passwords, just a straight line home.">
+  <meta property="og:url" content="https://sterling-halberg.co/petfindr" />
 
 
 
@@ -21,8 +22,8 @@
 
 
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/favicon-strlng.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon-strlng.png">
   <style>
     .project-hero {
       position: relative;
@@ -43,7 +44,8 @@
     }
 
     .project-content h1 {
-      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 80%);
+      padding-bottom: 0.15em;
+      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 40%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -54,16 +56,21 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 2rem 10rem 2rem;
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
+      column-count: 3;
+      column-gap: 30px;
     }
 
-    .gallery-column {
+    .project-gallery-centered {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 10rem 2rem;
       display: flex;
-      flex-direction: column;
-      gap: 30px;
-      flex: 1;
+      justify-content: center;
+    }
+
+    .project-gallery-centered .project-gallery-img {
+      width: calc((100% - 60px) / 3);
+      margin-bottom: 30px;
     }
 
     .project-gallery-img {
@@ -74,15 +81,18 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform;
+      margin-bottom: 30px;
       display: block;
+      break-inside: avoid;
     }
 
     @media (max-width: 1024px) {
       .project-gallery {
-        flex-wrap: wrap;
+        column-count: 2;
       }
-      .gallery-column {
-        min-width: calc(50% - 15px);
+
+      .project-gallery-centered .project-gallery-img {
+        width: calc((100% - 30px) / 2);
       }
     }
 
@@ -97,10 +107,11 @@
       }
 
       .project-gallery {
-        flex-direction: column;
+        column-count: 1;
       }
-      .gallery-column {
-        min-width: 100%;
+
+      .project-gallery-centered .project-gallery-img {
+        width: 100%;
       }
     }
 
@@ -118,45 +129,38 @@
 
 
     <nav style="position: absolute; top: 2rem; left: 2rem; z-index: 10;">
-      <a href="index.html" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
+      <a href="/" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
     <section class="project-hero">
       <div class="project-content">
-        <h1>$25 Billion</h1>
-        <p class="subtext">$25 Billion. That’s how much the global nail care market is projected to hit this year. Yet
-          most brands still treat nails like an afterthought. Scrub (founded by Madeline Silins) saw a different story:
-          people want simple, clean, and smart nail care, products that work and visuals that don’t talk down to them.
-        </p>
-        <p class="subtext" style="margin-bottom: 6rem;">We rebuilt the brand from scratch: a wordmark that stands alone,
-          unisex colors that pop but stay sophisticated, and packaging designed for clarity and impact. Fonts and
-          spacing crafted for consistency across digital, print, and social. Scrub isn’t just a product, it’s a system,
-          a routine, a vibe.</p>
+        <h1>Losing a pet is<br>every owner’s nightmare.</h1>
+        <p class="subtext">Posters, Facebook posts, microchips, none of it feels fast enough<br class="desktop-br">
+          when your dog’s out there somewhere. PetFindr (founded by Laura Rust)<br class="desktop-br">
+          decided to fix that. They built smart tags that do the talking, one quick scan and the finder
+          knows exactly who to call. No apps, no passwords, just a straight line home.</p>
+        <p class="subtext" style="margin-bottom: 6rem;">We took that same idea, fast, real, and turned it into a brand.
+          Clean shapes + calm colors + type that feels like it actually cares.</p>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-bottom: 5rem;">
-          <a href="https://au.linkedin.com/in/madelinesilins" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
-            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT MADELINE SILINS ON LINKEDIN</a>
+          <a href="https://au.linkedin.com/in/laurarustbupa" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT LAURA RUST ON LINKEDIN</a>
           <div
             style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);">
           </div>
-          <a href="https://www.instagram.com/scrubnails/" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
-            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT SCRUB INSTAGRAM</a>
+          <a href="https://www.instagram.com/petfindr_/" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT PETFINDR INSTAGRAM</a>
         </div>
       </div>
     </section>
 
-    <section class="project-gallery">
-      <div class="gallery-column">
-        <img src="images/scrubposts-39.jpg" alt="Scrub Project 1" class="project-gallery-img">
-      </div>
-      <div class="gallery-column">
-        <img src="images/scrubposts-40.jpg" alt="Scrub Project 2" class="project-gallery-img">
-        <img src="images/scrubposts-42.jpg" alt="Scrub Project 4" class="project-gallery-img">
-      </div>
-      <div class="gallery-column">
-        <img src="images/scrubposts-41.jpg" alt="Scrub Project 3" class="project-gallery-img">
-      </div>
+    <section class="project-gallery" style="padding-bottom: 0;">
+      <img src="/images/p-1.jpg" alt="PetFindr Project 1" class="project-gallery-img">
+      <img src="/images/p-2.jpg" alt="PetFindr Project 2" class="project-gallery-img">
+      <img src="/images/p-3.png" alt="PetFindr Project 3" class="project-gallery-img">
     </section>
 
-
+    <section class="project-gallery-centered">
+      <img src="/images/p-4.png" alt="PetFindr Project 4" class="project-gallery-img">
+    </section>
 
     <footer class="sn-global-footer">
       <a href="https://www.instagram.com/sterlinghalberg" target="_blank" rel="noopener noreferrer">Instagram</a>

@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A VA service built for founders - Blue Virtual</title>
-  <meta name="description"
-    content="A VA service built for founders who’d rather grow the business than spend their day drowning in admin.">
-  <link rel="canonical" href="https://sterling-halberg.co/projects/bluevirtual" />
-  <meta property="og:title" content="A VA service built for founders - Blue Virtual">
-  <meta property="og:description" content="A VA service built for founders who’d rather grow the business than spend their day drowning in admin.">
-  <meta property="og:url" content="https://sterling-halberg.co/projects/bluevirtual" />
+  <title>$25 Billion - Scrub</title>
+  <meta name="description" content="Scrub isn’t just a product, it’s a system, a routine, a vibe.">
+  <link rel="canonical" href="https://sterling-halberg.co/scrub" />
+  <meta property="og:title" content="$25 Billion - Scrub">
+  <meta property="og:description" content="Scrub isn’t just a product, it’s a system, a routine, a vibe.">
+  <meta property="og:url" content="https://sterling-halberg.co/scrub" />
 
 
 
@@ -22,8 +21,8 @@
 
 
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/favicon-strlng.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/images/favicon-strlng.png">
   <style>
     .project-hero {
       position: relative;
@@ -44,8 +43,7 @@
     }
 
     .project-content h1 {
-      padding-bottom: 0.15em;
-      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 40%);
+      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 80%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -56,8 +54,16 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 2rem 10rem 2rem;
-      column-count: 3;
-      column-gap: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .gallery-column {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex: 1;
     }
 
     .project-gallery-img {
@@ -68,9 +74,16 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: transform;
-      margin-bottom: 30px;
       display: block;
-      break-inside: avoid;
+    }
+
+    @media (max-width: 1024px) {
+      .project-gallery {
+        flex-wrap: wrap;
+      }
+      .gallery-column {
+        min-width: calc(50% - 15px);
+      }
     }
 
     .project-gallery-img:hover {
@@ -84,7 +97,10 @@
       }
 
       .project-gallery {
-        column-count: 1;
+        flex-direction: column;
+      }
+      .gallery-column {
+        min-width: 100%;
       }
     }
 
@@ -102,41 +118,45 @@
 
 
     <nav style="position: absolute; top: 2rem; left: 2rem; z-index: 10;">
-      <a href="index.html" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
+      <a href="/" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
     <section class="project-hero">
       <div class="project-content">
-        <h1>A VA service<br>built for founders.</h1>
-        <p class="subtext">Running a business is fun… until your inbox has 47 unread emails,<br class="desktop-br">
-          your calendar’s double booked, and you’re somehow doing admin at 11pm.<br class="desktop-br">
-          That’s where Blue Virtual (founded by Olivia Ford) comes in.<br class="desktop-br">
-          A VA service built for founders who’d rather grow the business<br class="desktop-br">
-          than spend their day drowning in admin.</p>
-        <p class="subtext">So we built the brand kit around that same idea: calm, clear, and organized.<br
-            class="desktop-br">
-          Clean type, confident colors, and a system that works smoothly across web and socials.</p>
-        <p class="subtext" style="margin-bottom: 6rem;">Because if someone’s job is fixing everyone else’s chaos,<br
-            class="desktop-br">
-          their brand shouldn’t look chaotic too.</p>
+        <h1>$25 Billion</h1>
+        <p class="subtext">$25 Billion. That’s how much the global nail care market is projected to hit this year. Yet
+          most brands still treat nails like an afterthought. Scrub (founded by Madeline Silins) saw a different story:
+          people want simple, clean, and smart nail care, products that work and visuals that don’t talk down to them.
+        </p>
+        <p class="subtext" style="margin-bottom: 6rem;">We rebuilt the brand from scratch: a wordmark that stands alone,
+          unisex colors that pop but stay sophisticated, and packaging designed for clarity and impact. Fonts and
+          spacing crafted for consistency across digital, print, and social. Scrub isn’t just a product, it’s a system,
+          a routine, a vibe.</p>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-bottom: 5rem;">
-          <a href="https://www.linkedin.com/in/olivia-ford-3a389690" target="_blank" rel="noopener noreferrer"
-            class="btn btn-glass" style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT OLIVIA FORD ON
-            LINKEDIN</a>
+          <a href="https://au.linkedin.com/in/madelinesilins" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT MADELINE SILINS ON LINKEDIN</a>
           <div
             style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%);">
           </div>
-          <a href="https://www.instagram.com/bluevirtualaus/" target="_blank" rel="noopener noreferrer"
-            class="btn btn-glass" style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT BLUE VIRTUAL
-            INSTAGRAM</a>
+          <a href="https://www.instagram.com/scrubnails/" target="_blank" rel="noopener noreferrer" class="btn btn-glass"
+            style="height: 42px; padding: 0 2rem; font-size: 0.8rem;">VISIT SCRUB INSTAGRAM</a>
         </div>
       </div>
     </section>
 
     <section class="project-gallery">
-      <img src="images/portfolio-blue.png" alt="Blue Virtual Project 1" class="project-gallery-img">
-      <img src="images/portfolio--bv-p-env-08.jpg.jpeg" alt="Blue Virtual Project 2" class="project-gallery-img">
-      <img src="images/bv-p1-03.jpg" alt="Blue Virtual Project 3" class="project-gallery-img">
+      <div class="gallery-column">
+        <img src="/images/scrubposts-39.jpg" alt="Scrub Project 1" class="project-gallery-img">
+      </div>
+      <div class="gallery-column">
+        <img src="/images/scrubposts-40.jpg" alt="Scrub Project 2" class="project-gallery-img">
+        <img src="/images/scrubposts-42.jpg" alt="Scrub Project 4" class="project-gallery-img">
+      </div>
+      <div class="gallery-column">
+        <img src="/images/scrubposts-41.jpg" alt="Scrub Project 3" class="project-gallery-img">
+      </div>
     </section>
+
+
 
     <footer class="sn-global-footer">
       <a href="https://www.instagram.com/sterlinghalberg" target="_blank" rel="noopener noreferrer">Instagram</a>
