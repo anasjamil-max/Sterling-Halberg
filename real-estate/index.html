@@ -38,10 +38,33 @@
       max-width: none;
       margin-top: 2rem;
       display: flex;
-      justify-content: flex-end;
-      padding: 0 0 0 2rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 0 4rem;
       box-sizing: border-box;
       overflow: visible;
+    }
+
+    .workflow-text {
+      max-width: 550px;
+      text-align: left;
+      flex-shrink: 0;
+      padding-right: 2rem;
+    }
+
+    .workflow-text h2 {
+      font-family: var(--font-heading);
+      font-size: 60px;
+      font-weight: 460;
+      line-height: 0.9;
+      letter-spacing: -3px;
+      text-align: left;
+      background: linear-gradient(to bottom, #f1f1f1 0%, #333333 20%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #333333;
+      margin: 0;
     }
 
     .workflow-container {
@@ -105,10 +128,12 @@
         stroke-dashoffset: 1;
         opacity: 0;
       }
+
       15% {
         stroke-dashoffset: 1;
         opacity: 1;
       }
+
       100% {
         stroke-dashoffset: 0;
         opacity: 1;
@@ -202,7 +227,7 @@
       .workflow-section {
         justify-content: flex-start;
       }
-      
+
       .workflow-container {
         justify-content: flex-start;
         padding: 0 1rem;
@@ -218,21 +243,31 @@
       <a href="/" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
 
-    <section class="hero" style="min-height: 100vh; padding-bottom: 8rem; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; width: 100%; box-sizing: border-box;">
-      <div class="hero-content" style="max-width: 1100px; width: 100%; margin-top: 15vh; text-align: center; display: flex; flex-direction: column; align-items: center;">
-        <h1 style="line-height: 0.9; margin-bottom: 3rem; text-transform: none; text-align: center;">The growth <br class="desktop-br">platform for top<br class="desktop-br"> performers</h1>
-        <div style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%); margin: 0 auto 3rem auto;"></div>
-        <p class="subtext" style="max-width: 650px; margin: 0 auto 3.5rem auto; text-align: center;">Build your brand, win more listings, and stay top of mind.</p>
+    <section class="hero"
+      style="min-height: 100vh; padding-bottom: 8rem; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; width: 100%; box-sizing: border-box;">
+      <div class="hero-content"
+        style="max-width: 1100px; width: 100%; margin-top: 15vh; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <h1 style="line-height: 0.9; margin-bottom: 3rem; text-transform: none; text-align: center;">The growth <br
+            class="desktop-br">platform for top<br class="desktop-br"> performers</h1>
+        <div
+          style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%); margin: 0 auto 3rem auto;">
+        </div>
+        <p class="subtext" style="max-width: 650px; margin: 0 auto 3.5rem auto; text-align: center;">Build your brand,
+          win more listings, and stay top of mind.</p>
         <a href="/contact" class="btn btn-glass" style="margin-bottom: 12rem;">GET STARTED</a>
 
       </div>
 
       <!-- Workflow Diagram below the Get Started button -->
       <div class="workflow-section">
+        <div class="workflow-text">
+          <h2>Your digital shopfront. Built<br class="desktop-br"> to convert.</h2>
+        </div>
         <div class="workflow-container">
           <!-- First Node: User Silhouette Card -->
           <div class="node-user">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #111;">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" style="color: #111;">
               <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
               <circle cx="12" cy="7" r="4" />
             </svg>
@@ -243,8 +278,10 @@
 
           <!-- Second Node: Signature/Pen Card -->
           <div class="node-signature">
-            <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #000000;">
-              <path class="signature-path" pathLength="1" d="M 6 28 C 8 20, 12 10, 16 12 C 20 14, 14 34, 18 34 C 22 34, 26 22, 28 22 C 30 22, 30 28, 33 28 C 36 28, 38 20, 42 20" />
+            <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" style="color: #000000;">
+              <path class="signature-path" pathLength="1"
+                d="M 6 28 C 8 20, 12 10, 16 12 C 20 14, 14 34, 18 34 C 22 34, 26 22, 28 22 C 30 22, 30 28, 33 28 C 36 28, 38 20, 42 20" />
             </svg>
           </div>
 
@@ -259,7 +296,8 @@
               <span style="width: 5px; height: 5px; border-radius: 50%; background: #e4e4e7;"></span>
             </div>
             <div style="flex-grow: 1; display: flex; align-items: center; padding-left: 8px;">
-              <code style="font-family: var(--font-mono); font-size: 13px; color: #111111; letter-spacing: -0.01em;">internal.vercel.sh</code>
+              <code
+                style="font-family: var(--font-mono); font-size: 13px; color: #111111; letter-spacing: -0.01em;">internal.vercel.sh</code>
             </div>
           </div>
         </div>
