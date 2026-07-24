@@ -31,6 +31,158 @@
 
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/png" href="/images/favicon-strlng.png">
+  <style>
+    /* Workflow section layout */
+    .workflow-section {
+      width: 100%;
+      max-width: none;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0 0 2rem;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+
+    .workflow-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+    }
+
+    .node-user {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      background: transparent;
+      border: 1px solid rgba(115, 115, 115, 0.35);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .node-user::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(115, 115, 115, 0.35) 0%, #000000 50%, rgba(115, 115, 115, 0.35) 100%);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .node-signature {
+      width: 68px;
+      height: 68px;
+      background: transparent;
+      border: 1px solid #000000;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .connector-line {
+      flex-grow: 1;
+      height: 1px;
+      background: #000000;
+      min-width: 32px;
+    }
+
+    .connector-arrow {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      min-width: 36px;
+      position: relative;
+    }
+
+    .connector-arrow::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background: #000000;
+    }
+
+    .connector-arrow::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #000000;
+      z-index: 11;
+    }
+
+    .node-browser {
+      position: relative;
+      background: transparent;
+      border: 1px solid rgba(115, 115, 115, 0.35);
+      border-radius: 24px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      width: 420px;
+      height: 280px;
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+
+    .node-browser::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(115, 115, 115, 0.35) 0%, #000000 50%, rgba(115, 115, 115, 0.35) 100%);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .node-browser span {
+      background: rgba(115, 115, 115, 0.45) !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .workflow-section {
+        justify-content: center;
+        padding: 0 1rem;
+      }
+
+      .workflow-container {
+        margin: 0 auto;
+        justify-content: center;
+        overflow-x: auto;
+        padding-bottom: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .workflow-section {
+        justify-content: flex-start;
+      }
+      
+      .workflow-container {
+        justify-content: flex-start;
+        padding: 0 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -40,13 +192,51 @@
       <a href="/" class="btn btn-glass" style="padding: 0 1.5rem; height: 36px; font-size: 0.8rem;">← BACK</a>
     </nav>
 
-    <section class="hero" style="min-height: 85vh; padding-bottom: 2rem;">
-      <div class="hero-content" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
-        <h1 style="line-height: 0.9; margin-bottom: 2.5rem; text-transform: none;">The growth <br
-            class="desktop-br">platform for top<br class="desktop-br"> performers</h1>
-        <p class="subtext" style="max-width: 650px; margin-left: auto; margin-right: auto; margin-bottom: 3.5rem;">Build
-          your brand, win more listings, and stay top of mind.</p>
-        <a href="/contact" class="btn btn-glass">GET STARTED</a>
+    <section class="hero" style="min-height: 100vh; padding-bottom: 8rem; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; width: 100%; box-sizing: border-box;">
+      <div class="hero-content" style="max-width: 1100px; width: 100%; margin-top: 15vh; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <h1 style="line-height: 0.9; margin-bottom: 3rem; text-transform: none; text-align: center;">The growth <br class="desktop-br">platform for top<br class="desktop-br"> performers</h1>
+        <div style="width: 1px; height: 80px; background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.25) 100%); margin: 0 auto 3rem auto;"></div>
+        <p class="subtext" style="max-width: 650px; margin: 0 auto 3.5rem auto; text-align: center;">Build your brand, win more listings, and stay top of mind.</p>
+        <a href="/contact" class="btn btn-glass" style="margin-bottom: 12rem;">GET STARTED</a>
+
+      </div>
+
+      <!-- Workflow Diagram below the Get Started button -->
+      <div class="workflow-section">
+        <div class="workflow-container">
+          <!-- First Node: User Silhouette Card -->
+          <div class="node-user">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #111;">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+
+          <!-- First Connector: Thin Horizontal Line -->
+          <div class="connector-line"></div>
+
+          <!-- Second Node: Signature/Pen Card -->
+          <div class="node-signature">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #111;">
+              <path d="M3 16c2 0 3-3 4.5-3s2 4 3.5 4 3.5-6 5.5-6 3 5 4.5 5" />
+            </svg>
+          </div>
+
+          <!-- Second Connector: Thin Horizontal Line with Arrow -->
+          <div class="connector-arrow"></div>
+
+          <!-- Third Node: Browser Frame -->
+          <div class="node-browser">
+            <div style="display: flex; gap: 6px; position: absolute; top: 14px; left: 16px;">
+              <span style="width: 5px; height: 5px; border-radius: 50%; background: #e4e4e7;"></span>
+              <span style="width: 5px; height: 5px; border-radius: 50%; background: #e4e4e7;"></span>
+              <span style="width: 5px; height: 5px; border-radius: 50%; background: #e4e4e7;"></span>
+            </div>
+            <div style="flex-grow: 1; display: flex; align-items: center; padding-left: 8px;">
+              <code style="font-family: var(--font-mono); font-size: 13px; color: #111111; letter-spacing: -0.01em;">internal.vercel.sh</code>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
