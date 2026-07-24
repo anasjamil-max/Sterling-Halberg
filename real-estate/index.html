@@ -57,7 +57,7 @@
       width: 96px;
       height: 96px;
       background: transparent;
-      border: 1px solid rgba(115, 115, 115, 0.35);
+      border: 1px solid rgba(0, 0, 0, 0.12);
       border-radius: 18px;
       display: flex;
       align-items: center;
@@ -73,7 +73,7 @@
       transform: translateY(-50%);
       width: 1px;
       height: 48px;
-      background: linear-gradient(to bottom, rgba(115, 115, 115, 0.35) 0%, #000000 50%, rgba(115, 115, 115, 0.35) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, #000000 50%, rgba(0, 0, 0, 0.12) 100%);
       pointer-events: none;
       z-index: 10;
     }
@@ -88,6 +88,31 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+    }
+
+    .signature-path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      opacity: 0;
+    }
+
+    .node-signature.in-view .signature-path {
+      animation: sign-draw 0.9s cubic-bezier(0.42, 0, 0.25, 1) forwards;
+    }
+
+    @keyframes sign-draw {
+      0% {
+        stroke-dashoffset: 1;
+        opacity: 0;
+      }
+      15% {
+        stroke-dashoffset: 1;
+        opacity: 1;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
     }
 
     .connector-line {
@@ -127,13 +152,14 @@
     .node-browser {
       position: relative;
       background: transparent;
-      border: 1px solid rgba(115, 115, 115, 0.35);
-      border-radius: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-right: none;
+      border-radius: 24px 0 0 24px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       width: 420px;
-      height: 280px;
+      height: 340px;
       box-sizing: border-box;
       flex-shrink: 0;
     }
@@ -146,13 +172,13 @@
       transform: translateY(-50%);
       width: 1px;
       height: 48px;
-      background: linear-gradient(to bottom, rgba(115, 115, 115, 0.35) 0%, #000000 50%, rgba(115, 115, 115, 0.35) 100%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, #000000 50%, rgba(0, 0, 0, 0.12) 100%);
       pointer-events: none;
       z-index: 10;
     }
 
     .node-browser span {
-      background: rgba(115, 115, 115, 0.45) !important;
+      background: rgba(0, 0, 0, 0.2) !important;
     }
 
     /* Responsive adjustments */
@@ -217,8 +243,8 @@
 
           <!-- Second Node: Signature/Pen Card -->
           <div class="node-signature">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #111;">
-              <path d="M3 16c2 0 3-3 4.5-3s2 4 3.5 4 3.5-6 5.5-6 3 5 4.5 5" />
+            <svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: #000000;">
+              <path class="signature-path" pathLength="1" d="M 6 28 C 8 20, 12 10, 16 12 C 20 14, 14 34, 18 34 C 22 34, 26 22, 28 22 C 30 22, 30 28, 33 28 C 36 28, 38 20, 42 20" />
             </svg>
           </div>
 
@@ -290,6 +316,30 @@
 
     initCursor();
     window.addEventListener('resize', initCursor);
+
+    // Scroll-into-view trigger & mouseenter re-trigger for signature drawing
+    const workflowSection = document.querySelector('.workflow-section');
+    const signatureNode = document.querySelector('.node-signature');
+    const signaturePath = document.querySelector('.signature-path');
+
+    if (workflowSection && signatureNode && signaturePath) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            signatureNode.classList.add('in-view');
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(workflowSection);
+
+      signatureNode.addEventListener('mouseenter', () => {
+        signaturePath.style.animation = 'none';
+        void signaturePath.offsetHeight;
+        signaturePath.style.animation = 'sign-draw 0.8s cubic-bezier(0.42, 0, 0.25, 1) forwards';
+      });
+    }
   </script>
 </body>
 
