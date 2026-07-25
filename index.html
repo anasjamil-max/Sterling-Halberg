@@ -33,7 +33,9 @@
 
 
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/home.css">
   <link rel="icon" type="image/png" href="/images/favicon-strlng.png">
 </head>
 
@@ -125,51 +127,7 @@
   </main>
   <div class="custom-cursor"></div>
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script>
-
-
-    const lenis = new Lenis({
-      duration: 1.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 1.2,
-      smoothWheel: true,
-      smoothTouch: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-
-    const cursor = document.querySelector('.custom-cursor');
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
-    const speed = 0.15;
-
-    function initCursor() {
-      if (window.innerWidth > 480) {
-        window.addEventListener('mousemove', e => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-          currentX += (mouseX - currentX) * speed;
-          currentY += (mouseY - currentY) * speed;
-          cursor.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-          requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-      }
-    }
-
-    initCursor();
-    window.addEventListener('resize', initCursor);
-
-
-  </script>
+  <script src="/js/global.js"></script>
 </body>
 
 </html>

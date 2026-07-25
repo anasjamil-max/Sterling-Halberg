@@ -1,0 +1,345 @@
+:root {
+  --main-gradient: linear-gradient(0deg,
+      rgb(255, 245, 230),
+      rgb(255, 240, 235) 25%,
+      rgb(250, 235, 245) 50%,
+      rgb(245, 240, 255) 75%,
+      rgb(250, 250, 255));
+  --bg-color: #f1f1f1;
+  --text-primary: #111111;
+  --text-secondary: #777777;
+  --font-heading: 'Geist', sans-serif;
+  --font-body: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: transparent;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-gradient);
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/noise-ninedeez.svg');
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+main,
+#root,
+#__next,
+.content {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  flex: 1 1 auto;
+  min-height: 100vh;
+}
+
+/* Base Typography */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 60px;
+  font-weight: 460;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  margin-bottom: 3.5rem;
+  background: linear-gradient(to bottom, #f1f1f1 0%, #333333 20%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #333333;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 460;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  background: linear-gradient(to bottom, #f1f1f1 0%, #333333 20%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #333333;
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  line-height: 22px;
+  color: rgba(115, 115, 115, 0.85);
+  max-width: 600px;
+  margin: 0 auto 6rem auto;
+}
+
+.subtext-dark {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  color: rgba(51, 51, 51, 0.70);
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 4rem;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #111;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  transform: scale(0.9);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.8);
+  color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-light:hover {
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Cursor */
+html,
+body,
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #ff4800;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+  will-change: transform;
+}
+
+/* Global Footer */
+.sn-global-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 20px 52px 20px;
+  background-color: transparent;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.72px;
+  color: rgba(51, 51, 51, 0.5);
+  position: relative;
+}
+
+.sn-global-footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sn-global-footer a:hover {
+  color: rgba(51, 51, 51, 0.9);
+}
+
+.sn-global-footer a:visited {
+  color: inherit;
+}
+
+/* Responsive Utilities & Breakpoints */
+.mobile-br {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-br {
+    display: none;
+  }
+
+  .mobile-br {
+    display: block;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 0.9;
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    background: linear-gradient(to bottom, #f1f1f1 0%, #333333 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .sn-global-footer {
+    gap: 20px;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 0.9;
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    line-height: 0.9;
+    letter-spacing: -3px;
+  }
+
+  .sn-global-footer {
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px 12px 60px 12px;
+    font-size: 11px;
+  }
+
+  .sn-global-footer span {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 4px;
+  }
+}
