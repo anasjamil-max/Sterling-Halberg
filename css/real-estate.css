@@ -573,18 +573,16 @@
   }
 }
 
-.mobile-br {
-  display: none;
-}
-
 @media (max-width: 768px) {
-  .mobile-br {
-    display: inline-block;
-  }
-
   .workflow-text h2,
   .tree-text h2 {
-    padding: 0 1.25rem;
+    font-size: 2.25rem;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
     box-sizing: border-box;
   }
 }
