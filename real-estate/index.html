@@ -67,6 +67,17 @@
       margin: 0;
     }
 
+    .workflow-text p {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: rgba(51, 51, 51, 0.75);
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
     .workflow-container {
       display: flex;
       align-items: center;
@@ -206,31 +217,137 @@
       background: rgba(0, 0, 0, 0.2) !important;
     }
 
+    .mobile-br {
+      display: none;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 1024px) {
+      .mobile-br {
+        display: block;
+      }
+
+      .hero::after {
+        display: none !important;
+      }
+
       .workflow-section {
+        flex-direction: column-reverse;
+        align-items: flex-start;
         justify-content: center;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+        gap: 3.5rem;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .workflow-text {
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
+        padding-left: 1rem;
+        padding-right: 0;
+        margin-top: 1.5rem;
+      }
+
+      .workflow-text h2 {
+        font-size: 3rem;
+        line-height: 0.9;
+        letter-spacing: -3px;
+        text-align: left;
+      }
+
+      .workflow-text p {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-top: 2rem;
+        max-width: 88%;
       }
 
       .workflow-container {
         margin: 0 auto;
-        justify-content: center;
-        overflow-x: auto;
-        padding-bottom: 1.5rem;
-        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        overflow: hidden;
+        overflow-x: hidden;
+        width: 100%;
         max-width: 100%;
+        padding-bottom: 0;
+      }
+
+      .hero-content .btn {
+        margin-bottom: 5rem !important;
       }
     }
 
     @media (max-width: 480px) {
       .workflow-section {
-        justify-content: flex-start;
+        padding: 0 1rem;
+        gap: 3rem;
+      }
+
+      .workflow-text {
+        margin-top: 1rem;
+        padding-left: 0.75rem;
+      }
+
+      .workflow-text h2 {
+        font-size: 2.5rem;
+        line-height: 0.9;
+        letter-spacing: -3px;
+        text-align: left;
+      }
+
+      .workflow-text p {
+        font-size: 0.925rem;
+        line-height: 1.25;
+        margin-top: 1.75rem;
+        max-width: 88%;
       }
 
       .workflow-container {
         justify-content: flex-start;
-        padding: 0 1rem;
+        padding: 0;
+        overflow: hidden;
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      .node-user {
+        width: 72px;
+        height: 72px;
+      }
+
+      .node-user svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .node-signature {
+        width: 52px;
+        height: 52px;
+      }
+
+      .node-signature svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .connector-line {
+        min-width: 16px;
+      }
+
+      .connector-arrow {
+        min-width: 20px;
+      }
+
+      .node-browser {
+        width: 280px;
+        height: 230px;
+        padding: 1rem;
+      }
+
+      .hero-content .btn {
+        margin-bottom: 3.5rem !important;
       }
     }
   </style>
@@ -261,7 +378,10 @@
       <!-- Workflow Diagram below the Get Started button -->
       <div class="workflow-section">
         <div class="workflow-text">
-          <h2>Your digital shopfront. Built<br class="desktop-br"> to convert.</h2>
+          <h2>Your digital <br class="mobile-br">shopfront. Built <br>to convert.</h2>
+          <p>Get a high-performing website paired with a complete brand refresh. While you're meeting clients, your
+            website is working around the clock, capturing contact enquiries, appraisal requests, and suburb guide
+            downloads, so qualified leads keep coming in.</p>
         </div>
         <div class="workflow-container">
           <!-- First Node: User Silhouette Card -->
@@ -297,7 +417,7 @@
             </div>
             <div style="flex-grow: 1; display: flex; align-items: center; padding-left: 8px;">
               <code
-                style="font-family: var(--font-mono); font-size: 13px; color: #111111; letter-spacing: -0.01em;">internal.vercel.sh</code>
+                style="font-family: var(--font-mono); font-size: 13px; color: #111111; letter-spacing: -0.01em;">Visibility + Trust + Growth</code>
             </div>
           </div>
         </div>
