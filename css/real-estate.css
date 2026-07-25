@@ -571,8 +571,20 @@
     max-width: 330px;
     gap: 0.65rem;
   }
+}
 
-  .hero-content .btn {
-    margin-bottom: 3.5rem !important;
+.mobile-br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-br {
+    display: inline-block;
+  }
+
+  .workflow-text h2,
+  .tree-text h2 {
+    padding: 0 1.25rem;
+    box-sizing: border-box;
   }
 }
