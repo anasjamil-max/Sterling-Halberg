@@ -170,6 +170,11 @@ h2 {
   text-transform: uppercase;
 }
 
+.btn-capsule {
+  border-radius: 9999px;
+  padding: 0 2.5rem;
+}
+
 .btn-glass {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);

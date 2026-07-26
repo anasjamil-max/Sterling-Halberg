@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GTL1HDP2L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-0GTL1HDP2L');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Sterling Halberg</title>
+  <meta name="description" content="The requested page could not be found. Return to Sterling Halberg homepage.">
+  <link rel="canonical" href="https://sterling-halberg.co/404" />
+  <meta property="og:title" content="404 - Page Not Found | Sterling Halberg">
+  <meta property="og:description" content="The requested page could not be found. Return to Sterling Halberg homepage.">
+  <meta property="og:url" content="https://sterling-halberg.co/404" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/error.css">
+  <link rel="icon" type="image/png" href="/images/favicon-strlng.png">
+</head>
+
+<body>
+
+  <main class="page-wrapper error-page-wrapper">
+
+    <section class="error-hero">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Page not found</h2>
+      <p class="error-description" id="error-desc">
+        The requested URL <code id="missing-path"></code> does not exist or has been moved.
+      </p>
+      <div class="error-action">
+        <a href="/" id="back-home-btn" class="btn btn-glass btn-capsule">← BACK TO HOME</a>
+      </div>
+    </section>
+
+    <footer class="sn-global-footer">
+      <a href="https://www.instagram.com/sterlinghalberg" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://linkedin.com/company/sterlinghalberg" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:careers@sterling-halberg.co" target="_blank" rel="noopener noreferrer">Careers</a>
+      <span>Sterling Halberg © 2026</span>
+    </footer>
+
+  </main>
+
+  <div class="custom-cursor"></div>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="/js/global.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const missingPathEl = document.getElementById('missing-path');
+      const descEl = document.getElementById('error-desc');
+      const path = window.location.pathname;
+
+      if (path && path !== '/' && path !== '/404' && path !== '/404.html') {
+        if (missingPathEl) {
+          missingPathEl.textContent = path;
+        }
+      } else {
+        if (descEl) {
+          descEl.innerHTML = 'The requested URL does not exist, has been removed, or is temporarily unavailable.';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
